@@ -1,27 +1,26 @@
 import React from "react";
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Navbar from './navbar.component';
-import HomePage from './homepage.component';
-import Dashboard from './dashboard.component';
-import Demo from './demo.component';
-import Contatti from './contatti.component';
-import Login from './login.component';
-import Registrazione from './registrazione.component';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Navbar from './components/navbar.component';
+import HomePage from './components/homepage.component';
+import Dashboard from './components/dashboard.component';
+import Demo from './components/demo.component';
+import Contatti from './components/contatti.component';
+import Login from './components/login.component';
+import Registrazione from './components/registrazione.component';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Router>
-        <Navbar />
-        <Route path="/" exact component={HomePage} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/contatti" component={Contatti} />
-        <Route path="/demo" component={Demo} />
-        <Route path="/login" component={Login} />
-        <Route path="registrazione" component={Registrazione}/>
-      </Router>
+    <div className="App">      
+      <Navbar />
+      <Routes>
+        <Route path="/" exact element={<HomePage />} />
+        <Route path="/contatti" element={<Contatti />} />
+        <Route path="/dashboard" element={<Dashboard />}/>
+        <Route path="/demo" element={<Demo />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registrazione" element={<Registrazione/>}/>
+      </Routes>
+
     </div>
   );
 }
-
-export default App;
