@@ -7,6 +7,7 @@ import Demo from './components/demo.component';
 import Contatti from './components/contatti.component';
 import Login from './components/login.component';
 import Registrazione from './components/registrazione.component';
+import Footer from './components/footer.component';
 
 export default function App() {
   return (
@@ -20,7 +21,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/registrazione" element={<Registrazione/>}/>
       </Routes>
-
+      <Footer />
     </div>
   );
 }
